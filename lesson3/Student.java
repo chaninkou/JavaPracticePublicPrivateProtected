@@ -1,31 +1,37 @@
 package lesson3;
 
+// Term: access modifiers: default, public, private, and protected
+
+// Only public or default, but mostly it's public, (class Student) will not work for a class from another package
 public class Student {
+	
+	// This is no modifier, so you could use this in this class or this package (this is default)
+	int a = 1;
+	
+	// This is visible to the WORLD
+	public int b = 2;
+	
+	// This is visible to package and all subclasses
+	protected int c = 3;
+	
 	// Could only be able to use in class
 	// Only the method in this class could use private
-	private int money = 1;
+	private int d = 4;
 	
-	// Also java will use the private variable instead of the variable in the method or constructor
-	private int mom = 2;
 	
-	// public modifier could use in class, package, subclass and world
-	public int dad = 3;
-	
-	// this is no modifier, so you could use this in class or package
-	int brother = 6;
 	// Never use the variable name
-	public void setMoney(int money, int mom){
-		money = 4;
-		mom = 5;
+	public void setMoney(int a, int b){
+		a = 4;
+		b = 5;
 	}
 	
-	
-	
-	public String howMuch(){
-		return "" + money;
+	// Mostly set method to public, but variable will be private
+	public int printThis(){
+		return a + b + c + d;
 	}
 	
-	public String toString(){
-		return "" + mom;
+	int printAnotherOne(){
+		return a;
 	}
+
 }
